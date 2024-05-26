@@ -1,7 +1,8 @@
 # Capture-tool
 Capture tool for Windows NT 5.x (2000/XP/2003)
+![image](https://github.com/Win2000DevCommunity/Capture-tool/assets/154258820/11c0f2d6-fcb1-4574-bd45-8f7c2fce216c)
 
-Steps:
+Steps to compile :
 
     Open Project Options in Dev-C++:
         Open your project in Dev-C++ (5.11 or newer compilator that support c++11.
