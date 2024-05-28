@@ -1,5 +1,8 @@
 # Capture-tool
-Capture tool for Windows NT 5.x (2000/XP/2003)
+Capture tool for Windows NT4 and NT 5.x (2000/XP/2003)
+
+![image](https://github.com/Win2000DevCommunity/Capture-tool/assets/154258820/d9226bc7-eed1-4d4d-9736-daa87139f09a)
+
 
 ![image](https://github.com/Win2000DevCommunity/Capture-tool/assets/154258820/11c0f2d6-fcb1-4574-bd45-8f7c2fce216c)
 
