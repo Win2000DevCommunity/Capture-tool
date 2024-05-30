@@ -1,0 +1,7 @@
+#include "resource.h"
+
+IDI_ICON1 ICON "Icons/capture.ico"
+IDI_ICON_CAPTURE ICON "Icons/capture.ico"
+IDI_ICON_SAVE ICON "Icons/save.ico"
+IDI_ICON_OPEN ICON "Icons/paint.ico"
+
