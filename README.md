@@ -23,8 +23,8 @@ Features:
 
         
 Future Support Planning:
-    Add Support for All Languages:
-        Expand the application's language support to include all major languages. This will make the application accessible to a wider audience, catering to users from diverse linguistic backgrounds.
+Add Support for All Languages:
+Expand the application's language support to include all major languages. This will make the application accessible to a wider audience, catering to users from diverse linguistic backgrounds.
 
     V1.1:
     Added capture select window mode.
