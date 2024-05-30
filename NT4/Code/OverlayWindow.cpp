@@ -34,26 +34,34 @@ LRESULT CALLBACK OverlayWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
         }
         break;
     case WM_LBUTTONUP:
-        ReleaseCapture();
-        SetCursor(LoadCursor(NULL, IDC_ARROW));
-        isCapturing = false;
-        captureRect.left = std::min(ptStart.x, ptEnd.x);
-        captureRect.top = std::min(ptStart.y, ptEnd.y);
-        captureRect.right = std::max(ptStart.x, ptEnd.x);
-        captureRect.bottom = std::max(ptStart.y, ptEnd.y);
-        
-        if (hBitmap) {
-            DeleteObject(hBitmap);
-            hBitmap = NULL;
-        }
-        hBitmap = ScreenCapture::CaptureRegion(&captureRect, capturedWidth, capturedHeight);
-        if (hBitmap == NULL) {
-            MessageBox(hWndMain, "Failed to capture region.", "Capture Error", MB_ICONERROR);
-        }
-        InvalidateRect(hWndMain, NULL, TRUE);
-        ShowWindow(hWndMain, SW_SHOW);  // Show the main window again
-        DestroyWindow(hWnd);  // Close the overlay window
-        break;
+    ReleaseCapture();
+    SetCursor(LoadCursor(NULL, IDC_ARROW));
+    isCapturing = false;
+    captureRect.left = std::min(ptStart.x, ptEnd.x);
+    captureRect.top = std::min(ptStart.y, ptEnd.y);
+    captureRect.right = std::max(ptStart.x, ptEnd.x);
+    captureRect.bottom = std::max(ptStart.y, ptEnd.y);
+    
+    // Erase the rectangle by redrawing it before capturing
+    hdc = GetDC(hWnd);
+    SetROP2(hdc, R2_NOTXORPEN);  // Set the mode to XOR to toggle the visibility
+    SelectObject(hdc, GetStockObject(NULL_BRUSH));
+    Rectangle(hdc, ptStart.x, ptStart.y, ptEnd.x, ptEnd.y);
+    ReleaseDC(hWnd, hdc);
+    
+    if (hBitmap) {
+        DeleteObject(hBitmap);
+        hBitmap = NULL;
+    }
+    hBitmap = ScreenCapture::CaptureRegion(&captureRect, capturedWidth, capturedHeight);
+    if (hBitmap == NULL) {
+        MessageBox(hWndMain, "Failed to capture region.", "Capture Error", MB_ICONERROR);
+    }
+    InvalidateRect(hWndMain, NULL, TRUE);
+    ShowWindow(hWndMain, SW_SHOW);  // Show the main window again
+    DestroyWindow(hWnd);  // Close the overlay window
+    break;
+
     case WM_KEYDOWN:
         if (wParam == VK_ESCAPE) {
             ReleaseCapture();
