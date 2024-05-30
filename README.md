@@ -27,9 +27,10 @@ Future Support Planning:
     Add Support for All Languages:
     Expand the application's language support to include all major languages. This will make the application accessible to a wider audience, catering to users from diverse linguistic backgrounds.
 
-    V1.1:
+V1.1:
+
     Added capture select window mode.
-    Removed the transparent background in select mode due to the problem with the 16-color.
+    Removed the transparent background in      select mode due to the problem with the 16-color.
     Fixed the issue with the process not being closed.
 
         
