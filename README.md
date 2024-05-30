@@ -29,7 +29,7 @@ Future Support Planning:
 
     V1.1:
     Added capture select window mode.
-    Removed the transparent background in select mode due to the problem with the 16-color palette.
+    Removed the transparent background in select mode due to the problem with the 16-color.
     Fixed the issue with the process not being closed.
 
         
