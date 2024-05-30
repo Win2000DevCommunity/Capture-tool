@@ -5,8 +5,6 @@
 #include <commdlg.h>
 #include <algorithm>
 #include "resource.h"
-
-#include <windows.h>
 #include <commctrl.h>
 
 #pragma comment(lib, "comctl32.lib")
@@ -20,7 +18,10 @@ int capturedWidth = 0, capturedHeight = 0;
 HBRUSH hBrushWhite, hBrushMainWindow;
 
 void MainWindow::RegisterAndCreateWindow(HINSTANCE hInstance, int nCmdShow) {
-    InitCommonControls(); // Use InitCommonControls for NT4
+    INITCOMMONCONTROLSEX icex;
+    icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
+    icex.dwICC = ICC_WIN95_CLASSES;
+    InitCommonControlsEx(&icex);
 
     WNDCLASS wc = { 0 };
     wc.lpfnWndProc = MainWindow::WndProc;
@@ -53,8 +54,9 @@ void MainWindow::RegisterAndCreateWindow(HINSTANCE hInstance, int nCmdShow) {
 
     hWndComboBox = CreateWindow("COMBOBOX", "", CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 10, 30, 150, 300, hWndMain, NULL, hInstance, NULL);
     SendMessage(hWndComboBox, CB_ADDSTRING, 0, (LPARAM)"Full Screen");
-    SendMessage(hWndComboBox, CB_ADDSTRING, 0, (LPARAM)"Select Region");
-    SendMessage(hWndComboBox, CB_SETCURSEL, 0, 0);
+	SendMessage(hWndComboBox, CB_ADDSTRING, 0, (LPARAM)"Select Region");
+	SendMessage(hWndComboBox, CB_ADDSTRING, 0, (LPARAM)"Selected Window");
+	SendMessage(hWndComboBox, CB_SETCURSEL, 0, 0);
 
     // Load icons and set them to the buttons
     HICON hIconCapture = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON_CAPTURE));
@@ -80,22 +82,32 @@ LRESULT CALLBACK MainWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPA
     case WM_COMMAND:
         switch (LOWORD(wParam)) {
         case 1:  // Capture button
-            ShowWindow(hWnd, SW_HIDE);  // Hide the main window
-            UpdateWindow(hWnd);  // Ensure the window is hidden before capturing
-            Sleep(100);
+    ShowWindow(hWnd, SW_HIDE);  // Hide the main window
+    UpdateWindow(hWnd);  // Ensure the window is hidden before capturing
+    Sleep(100);
 
-            if (SendMessage(hWndComboBox, CB_GETCURSEL, 0, 0) == 0) {
-                hBitmap = ScreenCapture::CaptureScreen(capturedWidth, capturedHeight);
-                if (hBitmap == NULL) {
-                    MessageBox(hWnd, "Failed to capture full screen.", "Capture Error", MB_ICONERROR);
-                }
-            } else {
-                SetCursor(LoadCursor(NULL, IDC_CROSS));
-                isCapturing = true;
-                OverlayWindow::ShowOverlayWindow((HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), hWnd);
+    switch (SendMessage(hWndComboBox, CB_GETCURSEL, 0, 0)) {
+        case 0: // Full Screen
+            hBitmap = ScreenCapture::CaptureScreen(capturedWidth, capturedHeight);
+            if (hBitmap == NULL) {
+                MessageBox(hWnd, "Failed to capture full screen.", "Capture Error", MB_ICONERROR);
             }
-            ShowWindow(hWnd, SW_SHOW);
             break;
+        case 1: // Select Region
+            SetCursor(LoadCursor(NULL, IDC_CROSS));
+            isCapturing = true;
+            OverlayWindow::ShowOverlayWindow((HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), hWnd);
+            break;
+        case 2: // Capture Selected Window
+            hBitmap = ScreenCapture::CaptureSelectedWindow(capturedWidth, capturedHeight);
+            if (hBitmap == NULL) {
+                MessageBox(hWnd, "Failed to capture selected window.", "Capture Error", MB_ICONERROR);
+            }
+            break;
+    }
+    ShowWindow(hWnd, SW_SHOW);
+    break;
+
         case 2:  // Save button
             if (hBitmap) {
                 OPENFILENAME ofn;
@@ -126,10 +138,10 @@ LRESULT CALLBACK MainWindow::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPA
                 if (BitmapHandler::SaveBitmapFile(hBitmap, tempFile)) {
                     BitmapHandler::OpenWithPaint(tempFile);
                 } else {
-                    MessageBox(hWnd, "Failed to save temporary file.", "Error", MB_ICONERROR);
+                    MessageBox(hWnd, "Failed to save.", "Error", MB_ICONERROR);
                 }
             } else {
-                MessageBox(hWnd, "No image captured to open.", "Error", MB_ICONWARNING);
+                MessageBox(hWnd, "No image captured to open", "Error", MB_ICONWARNING);
             }
             break;
         }
