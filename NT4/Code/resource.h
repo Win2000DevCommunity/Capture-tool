@@ -1,5 +1,0 @@
-#define IDI_ICON1 101
-#define IDI_ICON_CAPTURE 102
-#define IDI_ICON_SAVE 103
-#define IDI_ICON_OPEN 104
-
