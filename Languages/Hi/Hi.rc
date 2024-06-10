@@ -1,0 +1,16 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "स्क्रीन कैप्चर टूल"
+    IDS_SELECT_MODE, "मोड का चयन करें:"
+    IDS_CAPTURE, "कैप्चर करें"
+    IDS_SAVE, "सहेजें"
+    IDS_OPEN, "खोलें"
+    IDS_FULL_SCREEN, "पूरा स्क्रीन"
+    IDS_SELECT_REGION, "क्षेत्र का चयन करें"
+    IDS_SELECTED_WINDOW, "चयनित विंडो"
+    IDS_CAPTURE_ERROR, "स्क्रीन कैप्चर करने में विफल।"
+    IDS_SAVE_ERROR, "सहेजने में विफल।"
+    IDS_OPEN_ERROR, "खोलने के लिए कोई छवि नहीं।"
+END

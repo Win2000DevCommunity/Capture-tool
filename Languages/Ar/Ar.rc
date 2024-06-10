@@ -1,0 +1,17 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "√œ«… «· ﬁ«ÿ «·‘«‘…"
+    IDS_SELECT_MODE, "«Œ — «·Ê÷⁄:"
+    IDS_CAPTURE, "«· ﬁ«ÿ"
+    IDS_SAVE, "Õ›Ÿ"
+    IDS_OPEN, "› Õ"
+    IDS_FULL_SCREEN, "‘«‘… ﬂ«„·…"
+    IDS_SELECT_REGION, "«Œ — «·„‰ÿﬁ…"
+    IDS_SELECTED_WINDOW, "«·‰«›–… «·„Õœœ…"
+    IDS_CAPTURE_ERROR, "›‘· ›Ì «· ﬁ«ÿ «·‘«‘…."
+    IDS_SAVE_ERROR, "›‘· ›Ì «·Õ›Ÿ."
+    IDS_OPEN_ERROR, "·«  ÊÃœ ’Ê—… ·› ÕÂ«."
+END
+
