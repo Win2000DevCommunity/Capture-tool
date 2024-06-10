@@ -1,0 +1,17 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "화면 캡처 도구"
+    IDS_SELECT_MODE, "모드 선택:"
+    IDS_CAPTURE, "캡처"
+    IDS_SAVE, "저장"
+    IDS_OPEN, "열기"
+    IDS_FULL_SCREEN, "전체 화면"
+    IDS_SELECT_REGION, "영역 선택"
+    IDS_SELECTED_WINDOW, "선택된 창"
+    IDS_CAPTURE_ERROR, "화면 캡처 실패."
+    IDS_SAVE_ERROR, "저장 실패."
+    IDS_OPEN_ERROR, "열 이미지 없음."
+END
+

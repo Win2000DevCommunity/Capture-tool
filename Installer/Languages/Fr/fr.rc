@@ -1,0 +1,18 @@
+#include "..\..\resource.h"
+
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE, "Outil de Capture d'Écran"
+    IDS_SELECT_MODE, "Sélectionner Mode:"
+    IDS_CAPTURE, "Capturer"
+    IDS_SAVE, "Enregistrer"
+    IDS_OPEN, "Ouvrir"
+    IDS_FULL_SCREEN, "Plein Écran"
+    IDS_SELECT_REGION, "Sélectionner Région"
+    IDS_SELECTED_WINDOW, "Fenêtre Sélectionnée"
+    IDS_CAPTURE_ERROR, "Échec de la capture d'écran."
+    IDS_SAVE_ERROR, "Échec de l'enregistrement."
+    IDS_OPEN_ERROR, "Aucune image à ouvrir."
+END
+
