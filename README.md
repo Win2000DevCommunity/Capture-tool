@@ -10,7 +10,10 @@ Capture tool for Windows NT4 and NT 5.x (2000/XP/2003)
 ![image](https://github.com/Win2000DevCommunity/Capture-tool/assets/154258820/0e99839d-b386-4e5a-8c3e-85cf109f8214)
 
 
+![image](https://github.com/Win2000DevCommunity/Capture-tool/assets/154258820/30af5c1f-7bc5-4ce2-bf8a-d6a64691eca7)
+
 Features:
+
 
     Full-Screen Capture:
     The application currently supports capturing the entire screen, allowing users to take comprehensive screenshots of all visible content on their display.
