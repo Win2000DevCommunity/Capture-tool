@@ -46,7 +46,7 @@ Steps to compile :
         In the Project Options window, go to the Parameters tab.
         Under the C++ Compiler section, add the necessary compiler flags. 
         
-            Example: -std=c++11
+            Example: -std=c++11 // for 2000/XP/2003 
 
     Set Linker Parameters:
         In the same Parameters tab, go to the Linker section.
