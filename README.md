@@ -21,7 +21,7 @@ Features:
     Select Window Capture Mode:
     Users can capture the content of a single window, enabling more focused and precise screen captures, thus improving user experience and usability.
     
-    Supports many Languages:
+    Supports many Languages.
         
 
 V1.1:
