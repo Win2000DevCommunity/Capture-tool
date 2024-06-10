@@ -1,0 +1,17 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "屏幕捕捉工具"
+    IDS_SELECT_MODE, "选择模式:"
+    IDS_CAPTURE, "捕捉"
+    IDS_SAVE, "保存"
+    IDS_OPEN, "打开"
+    IDS_FULL_SCREEN, "全屏"
+    IDS_SELECT_REGION, "选择区域"
+    IDS_SELECTED_WINDOW, "选定的窗口"
+    IDS_CAPTURE_ERROR, "屏幕捕捉失败。"
+    IDS_SAVE_ERROR, "保存失败。"
+    IDS_OPEN_ERROR, "没有可打开的图像。"
+END
+

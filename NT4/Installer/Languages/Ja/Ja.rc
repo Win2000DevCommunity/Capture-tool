@@ -1,0 +1,17 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "スクリーンキャプチャツール"
+    IDS_SELECT_MODE, "モードを選択:"
+    IDS_CAPTURE, "キャプチャ"
+    IDS_SAVE, "保存"
+    IDS_OPEN, "開く"
+    IDS_FULL_SCREEN, "全画面"
+    IDS_SELECT_REGION, "領域を選択"
+    IDS_SELECTED_WINDOW, "選択されたウィンドウ"
+    IDS_CAPTURE_ERROR, "画面のキャプチャに失敗しました。"
+    IDS_SAVE_ERROR, "保存に失敗しました。"
+    IDS_OPEN_ERROR, "開く画像がありません。"
+END
+
