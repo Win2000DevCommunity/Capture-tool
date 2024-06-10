@@ -1,0 +1,17 @@
+#include "..\..\resource.h"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE, "螢幕擷取工具"
+    IDS_SELECT_MODE, "選擇模式:"
+    IDS_CAPTURE, "擷取"
+    IDS_SAVE, "保存"
+    IDS_OPEN, "打開"
+    IDS_FULL_SCREEN, "全螢幕"
+    IDS_SELECT_REGION, "選擇區域"
+    IDS_SELECTED_WINDOW, "選定的窗口"
+    IDS_CAPTURE_ERROR, "螢幕擷取失敗。"
+    IDS_SAVE_ERROR, "保存失敗。"
+    IDS_OPEN_ERROR, "沒有可打開的圖像。"
+END
+

@@ -1,0 +1,18 @@
+#include "..\..\resource.h"
+
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE, "Screen Capture Tool"
+    IDS_SELECT_MODE, "Select Mode:"
+    IDS_CAPTURE, "Capture"
+    IDS_SAVE, "Save"
+    IDS_OPEN, "Open"
+    IDS_FULL_SCREEN, "Full Screen"
+    IDS_SELECT_REGION, "Select Region"
+    IDS_SELECTED_WINDOW, "Selected Window"
+    IDS_CAPTURE_ERROR, "Failed to capture screen."
+    IDS_SAVE_ERROR, "Failed to save."
+    IDS_OPEN_ERROR, "No image to open."
+END
+
