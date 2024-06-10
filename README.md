@@ -20,12 +20,9 @@ Features:
 
     Select Window Capture Mode:
     Users can capture the content of a single window, enabling more focused and precise screen captures, thus improving user experience and usability.
-
+    
+    Supports many Languages:
         
-Future Support Planning:
-
-    Add Support for All Languages:
-    Expand the application's language support to include all major languages. This will make the application accessible to a wider audience, catering to users from diverse linguistic backgrounds.
 
 V1.1:
 
@@ -33,7 +30,12 @@ V1.1:
     Removed the transparent background in select mode due to the problem with the 16-color.
     Fixed the issue with the process not being closed.
 
-        
+V1.2:
+
+    Fix bug when selecting the region again in the same process.
+    Add installer and support for multiple languages.
+     
+             
 Steps to compile :
 
     Open Project Options in Dev-C++:
